@@ -1,3 +1,4 @@
+package main;
 /**
  * Clase Mano para definir la mano de un jugador.
  * @author oscar
@@ -7,7 +8,7 @@ public final class Hands {
 	// Atributos.
 	public static final int CARDS = 5;
 	/**
-	 * 
+	 * Tipo de Mano que tenemos.
 	 */
 	public enum Type {
 	HIGH_CARD,
