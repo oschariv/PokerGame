@@ -15,7 +15,12 @@ public final class Card {
 	 * Diamantes. CLUB - Treboles.
 	 */
 	public static enum Suit {
-		SPADE, HEART, DIAMOND, CLUB
+		SPADE('♠'), HEART('♥'), DIAMOND('♦'), CLUB('♣');
+		private Suit(char c) {
+			this.c = c;
+		}
+
+		private final char c;
 	}
 
 	/**
@@ -77,14 +82,15 @@ public final class Card {
 	 */
 	@Override
 	public String toString() {
-		int rankValue = rank.ordinal();
-		return STRING_RANK_CARDS.substring(rankValue, rankValue + 1).concat(suit.name().substring(0, 1));
+		int r = rank.ordinal();
+		return STRING_RANK_CARDS.substring(r, r + 1) + suit.c;
 	}
 
 	@Override
 	public int hashCode() {
 		return rank.ordinal() * Suit.values().length + suit.ordinal();
 	}
+
 	/**
 	 * Metodo sobreescrito que comprueba si hay valores repetidos.
 	 * 
@@ -102,3 +108,4 @@ public final class Card {
 		return result;
 	}
 }
+
