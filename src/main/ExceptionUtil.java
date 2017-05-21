@@ -1,3 +1,4 @@
+package main;
 import java.text.MessageFormat;
 
 public final class ExceptionUtil {
